@@ -1,9 +1,10 @@
 const {src, dest, watch, parallel} = require('gulp');
 
-const sass = require('gulp-sass')(require('sass'));
-const concat = require('gulp-concat');
-const browserSync = require('browser-sync').create();
+const sass         = require('gulp-sass')(require('sass'));
+const concat       = require('gulp-concat');
+const browserSync  = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
+const uglify       = require('gulp-uglify-es').default;
 
 function browsersync () {
     browserSync.init ({
@@ -11,6 +12,14 @@ function browsersync () {
             baseDir:'src/'
         }
     })
+}
+
+function scripts () {
+    return src ('src/js/script.js')
+    .pipe (concat('script.min.js'))
+    .pipe (uglify())
+    .pipe (dest('src/js'))
+    .pipe(browserSync.stream())
 }
 
 function styles () {
@@ -27,11 +36,23 @@ function styles () {
 
 function watching () {
     watch(['src/sass/**/*.scss'], styles);
+    watch(['src/js/**/*.js', '!src/js/script.min.js'], scripts);
     watch('src/*.html').on ('change', browserSync.reload);
 }
 
+function build() {
+    return src ([
+        'src/css/style.min.css',
+        'src/js/script.min.js',
+        'src/*.html'
+    ], {base: 'src'})
+    .pipe(dest('dist'))
+}
+
 exports.styles = styles;
+exports.scripts = scripts;
 exports.watching = watching;
 exports.browsersync = browsersync;
+exports.build = build;
 
-exports.default = parallel(browsersync, watching);
+exports.default = parallel(scripts, browsersync, watching);
