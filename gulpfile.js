@@ -1,10 +1,12 @@
-const {src, dest, watch, parallel} = require('gulp');
+const {src, dest, watch, parallel, series} = require('gulp');
 
 const sass         = require('gulp-sass')(require('sass'));
 const concat       = require('gulp-concat');
 const browserSync  = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const uglify       = require('gulp-uglify-es').default;
+const imagemin     = require('gulp-imagemin');
+const del          = require('del');
 
 function browsersync () {
     browserSync.init ({
@@ -14,11 +16,31 @@ function browsersync () {
     })
 }
 
+function cleanDist () {
+    return del('dist')
+}
+
+function img () {
+    return src ('src/img/**/*')
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.mozjpeg({quality: 75, progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
+            })
+        ]))
+        .pipe(dest('dist/img'))
+}
+
 function scripts () {
     return src ('src/js/script.js')
-    .pipe (concat('script.min.js'))
-    .pipe (uglify())
-    .pipe (dest('src/js'))
+    .pipe(concat('script.min.js'))
+    .pipe(uglify())
+    .pipe(dest('src/js'))
     .pipe(browserSync.stream())
 }
 
@@ -52,7 +74,9 @@ function build() {
 exports.styles = styles;
 exports.scripts = scripts;
 exports.watching = watching;
+exports.img = img;
 exports.browsersync = browsersync;
-exports.build = build;
 
-exports.default = parallel(scripts, browsersync, watching);
+
+exports.build = series(cleanDist, img, build);
+exports.default = parallel(styles, scripts, browsersync, watching);
