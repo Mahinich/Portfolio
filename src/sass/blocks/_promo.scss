@@ -7,4 +7,20 @@
     position: relative;
     background: url('../img/main_bg.jpg') no-repeat 50%/cover;
     padding-top: 205px;
+    &__title {
+        margin-top: 9px;
+    }
+    &__bttns {
+        margin-top: 25px;
+        width: 248px;
+        display: flex;
+    }
+    &__link {
+        font-weight: bold;
+        color: #000000;
+        &:hover{
+            color: #000000;
+            text-decoration: none;
+        }
+    }
 }
