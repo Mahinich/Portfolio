@@ -10,10 +10,18 @@
     &__title {
         margin-top: 9px;
     }
+    &__subtitle {
+        padding-left: 10px;
+        position: relative;
+        z-index: 2;
+        @include before_circle;
+    }
     &__bttns {
         margin-top: 25px;
         width: 248px;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
     &__link {
         font-weight: bold;
@@ -21,6 +29,11 @@
         &:hover{
             color: #000000;
             text-decoration: none;
+        }
+        &:last-child {
+            height: 45px;
+            padding: 12px 25px;
+            min-width: max-content;
         }
     }
 }
