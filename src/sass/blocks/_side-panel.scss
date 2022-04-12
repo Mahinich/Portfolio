@@ -1,0 +1,25 @@
+.social-panel {
+    height: 338px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 226px;
+    left: 50px;
+    z-index: 1;
+    &__divider {
+        height: 70px;
+        width: 2px;
+        background-color: #000;
+    }
+    &__text {
+        height: 148px;
+        width: 24px;
+        span {
+            display: block;
+            width: 148px;
+            transform: rotate(-90deg) translate(-30%, -63px);
+        }
+    }
+}
