@@ -1,4 +1,65 @@
 .about-me {
     height: 840px;
     padding: 120px 0;
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    &__descr {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        max-height: 413px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__specializations {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 15px;
+    }
+   
+    &__divider {
+        width: 60px;
+        height: 3px;
+        background-color: $base-color;
+        margin-bottom: 20px;
+    }
+
+    &__subtitle {
+        position: relative;
+        @include before_circle; 
+        &:before {
+            transform: translateX(-40%);
+        }
+    }
+    &__descr {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #000000;
+    }
+
+    &__item {
+        display: flex;
+    }
+
+    &__item-circle {
+        position: relative;
+        margin-right: 20px;
+        transform: translateY(15px);
+        @include before_circle;
+        &:before {
+            transform: translate(-40%, 55%);
+            
+        }
+    }
+    
+    &__item-descr {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: #000000;
+    }
 }
