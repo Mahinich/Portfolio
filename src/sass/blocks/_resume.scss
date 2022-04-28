@@ -12,5 +12,57 @@
     &__subtitle {
         text-align: center;
     }
+    &__wrapper {
+        padding: 60px 65px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 425px);
+        column-gap: 136px;
+    }
+    &__column {
+        &-title {
+            padding-left: 35px;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: -7px;
+                top: 7px;
+                width: 15px;
+                height: 15px;
+                background: $base-color;
+                border-radius: 50%;
+            }
+        }
+        ul {
+            list-style: none;
+            li {
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height: 100%;
+                    background-color: #000;
+                    top: -16px;
+                }
+            }
+        }
+    }
+    &__item {
+        &-head {
+            padding: 45px 0 0 99px;
+        }
+        &-descr {
+            padding: 12px 0 0 43px;
+        }
+        &-icon {
+            position: relative;
+            @include before_circle;
+            &:before {
+                top: -42%;
+                left: -16px;
+            }
+        }
+    }
 }
 
