@@ -1,0 +1,30 @@
+.price {
+    padding-top: 60px;
+    &__list {
+        padding-top: 60px;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 15px;
+    }
+    &__item {
+        width: 336px;
+        height: 44px;
+        display: grid;
+        grid-template-columns: minmax(60px, auto) minmax(85px, auto);
+        row-gap: 5px;
+        justify-content: end;
+        &-price {
+            font-size: 14px;
+            line-height: 21px;
+            color: #000000;
+        }
+        &-descr {
+            font-size: 12px;
+            line-height: 18px;
+            color: #000000;
+            grid-column: 1/3;
+        }
+    }
+}
