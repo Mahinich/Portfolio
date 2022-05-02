@@ -20,4 +20,17 @@
     &_fs48 {
         font-size: 48px;
     }
+    &-section {
+        text-align: center;
+        position: relative;
+        @include before_circle;
+        &:before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.subtitle-section {
+    text-align: center;
 }
