@@ -1,11 +1,9 @@
 .contacts {
-    padding-top: 120px;
+    padding: 120px 0 90px;
     &__wrapper {
+        padding: 0 35px 0 52px;
         display: grid;
-        grid-template-columns: 276px 794px;
-        grid-template-rows: minmax(200px auto) minmax(213px auto);
-        grid-auto-rows: minmax(243px auto);
-        column-gap: 70px;
-        row-gap: 40px;
+        grid-template-columns: 276px 585px;
+        column-gap: 68px;
     }
 }
