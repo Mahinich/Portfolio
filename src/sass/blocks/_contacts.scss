@@ -23,16 +23,55 @@
         @include before_circle;
     }
     &__text, &__social {
-        margin-top: 20px;
+        margin-top: 15px;
     }
     &__link {
       margin-right: 25px;
         img {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
         }
     }
     &__form {
-        margin-top: 30px;
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(2, 280px);
+        grid-template-rows: 35px 55px 45px;
+        column-gap: 25px;
+        row-gap: 20px;
+        label {
+            position: absolute;
+            height: 18px;
+            padding: 0 8px;
+            left: 12px;
+            top: -10px;
+            background: #FFF;
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+        button {
+            border: none;
+            height: 100%;
+        }
     }
-}
+    &__input {
+        position: relative;
+        input {
+            padding: 0 20px;
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+        }
+    }
+    &__textarea {
+        position: relative;
+        grid-column: 1/3;
+        textarea {
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+            resize: none;
+        }
+    }
+} 
