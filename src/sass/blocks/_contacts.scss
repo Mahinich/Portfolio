@@ -74,4 +74,20 @@
             resize: none;
         }
     }
+    &__trigger {
+        grid-column: 1/3;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        column-gap: 35px;
+        align-items: center;
+    }
+    &__policy {
+        align-items: center;
+        font-size: 12px;
+        line-height: 18px;
+        display: flex;
+        input {
+            margin-right: 10px;
+        }
+    }
 } 
