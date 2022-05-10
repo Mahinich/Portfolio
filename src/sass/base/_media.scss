@@ -1,1 +1,53 @@
 
+@media (max-width: 1200px) {
+    .container {
+        width: 960px;
+    }
+    .social-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 720px;
+    } 
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 540px;
+    } 
+    .promo{
+        &__title {
+            font-size: 35px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    } 
+    .promo {
+        background: url('../img/main_bg.jpg') 45%/cover no-repeat;
+        &__title {
+            font-size: 28px;
+            line-height: 39px;
+            width: 300px;
+        }
+        &__bttns {
+            margin-top: 32px;
+        }
+        .hamburger {
+            right: 20px;
+        }
+    }
+    .menu {
+        &__block {
+            width: 250px;
+            padding-left: 55px;
+        }
+    }
+}
