@@ -1,10 +1,21 @@
 
+@media (max-width: 1430px) {
+    .container {
+        width: 960px;
+    }
+}
+
 @media (max-width: 1200px) {
     .container {
         width: 960px;
     }
     .social-panel {
         display: none;
+    }
+    .about {
+        &__wrapper {
+            grid-template-columns: 276px 605px;
+        }
     }
 }
 
