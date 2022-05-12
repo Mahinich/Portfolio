@@ -2,6 +2,7 @@
 @media (max-width: 1430px) {
     .container {
         width: 960px;
+
     }
 }
 
@@ -14,7 +15,12 @@
     }
     .about {
         &__wrapper {
-            grid-template-columns: 276px 605px;
+            grid-template-columns: 276px 633px;
+            column-gap: 50px;
+            row-gap: 30px;
+        }
+        &__skills-item {
+            grid-template-columns: 25px 1fr;
         }
     }
 }
