@@ -29,6 +29,42 @@
     .container {
         width: 720px;
     } 
+    .about {
+        &__wrapper {
+            grid-template-columns: 218px 477px;
+            column-gap: 25px;
+        }
+        &__photo {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__subtitle {
+            font-size: 30px;
+            line-height: 31px;
+            margin-bottom: 5px;
+        }
+        &__text {
+            margin-top: 10px;
+            line-height: 18px;
+        }
+        &__skills {
+            column-gap: 15px;
+            &-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                div[data-wrap="tac"] {
+                    text-align: center;
+                }
+            }
+            &-text {
+                line-height: 15px;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
