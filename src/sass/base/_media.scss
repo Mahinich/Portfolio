@@ -23,6 +23,10 @@
             grid-template-columns: 25px 1fr;
         }
     }
+    .resume__wrapper {
+        column-gap: 100px;
+        grid-template-columns: repeat(2, 365px);
+    }
 }
 
 @media (max-width: 992px) {
@@ -66,6 +70,25 @@
             }
         }
     }
+    .resume {
+        padding-top: 70px;
+        .subtitle-section {
+            line-height: 50px;
+        }
+        &__wrapper {
+            padding: 30px 15px 0;
+            column-gap: 60px;
+            grid-template-columns: repeat(2, 315px);
+        }
+        &__item {
+            &-head {
+                padding-top: 25px;
+            }
+            &-icon{
+                top: 35px;  
+            }    
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -101,6 +124,19 @@
                     text-align: left;
                 }
             }
+        }
+    }
+    .resume {
+        padding-top: 40px;
+        .subtitle-section {
+            line-height: 40px;
+        }
+        .divider {
+            margin-top: 15px;
+        }
+        &__wrapper {
+            grid-template-columns: 1fr;
+            grid-auto-rows: auto;
         }
     }
 }
