@@ -131,13 +131,19 @@
         &__wrapper {
             grid-template-columns: 1fr;
             grid-template-rows: 370px auto auto;
-            row-gap: 15px;
+            row-gap: 40px;
         }
         &__photo  {
             grid-row: unset
         }
         &__subtitle {
-            margin-top: 13px;
+            line-height: 40px;
+        }
+        .divider {
+            margin: 15px 0 0;
+        }
+        &__text {
+            line-height: 25px;
         }
         &__skills {
             grid-template-columns: 1fr;
