@@ -6,14 +6,14 @@
         list-style-type: none;
         display: grid;
         grid-template: repeat(3, minmax(45px, auto)) / repeat(2, 365px);
-        grid-template-rows: repeat(3, minmax(45px, auto));
+        grid-auto-rows: minmax(45px, auto);
         row-gap: 15px;
         justify-content: space-between;
     }
     &__item {
         position: relative;
         display: grid;
-        grid-template: repeat(2, minamx(21,auto)) / repeat(2, auto);
+        grid-template: repeat(2, minmax(21px, auto)) / repeat(2, auto);
         row-gap: 5px;
         padding-left: 25px;
         &:before {
@@ -32,6 +32,7 @@
         font-size: 14px;
         line-height: 21px;
         color: #000000;
+        font-weight: 700;
     }
     &__money {
         justify-self: end;
