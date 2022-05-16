@@ -32,6 +32,16 @@
             }
         }
     }
+    .portfolio {
+        &__items  {
+            grid-template-columns: repeat(auto-fit, 280px);
+            justify-content: center;
+            .vertical, .horizontal {
+                grid-column: unset;
+                grid-row: unset;
+            }
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -113,7 +123,11 @@
         }
         &__rates {
             margin-top: 70px;
+            grid-template-columns: repeat(2, 337px);
         }
+    }
+    .portfolio {
+        padding-top: 70px;
     }
 }
 
@@ -199,7 +213,7 @@
         padding: 0 10px;
     } 
     .promo {
-        background: url('../img/main_bg.jpg') 45%/cover no-repeat;
+        background: url('../img/main_bg_min.jpg') 10% 45%/cover no-repeat;
         &__title {
             font-size: 28px;
             line-height: 39px;
