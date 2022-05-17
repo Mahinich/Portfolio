@@ -334,4 +334,17 @@
             grid-template-columns: repeat(auto-fit, 295px);
         }
     }
+    .contacts {
+        &__form {
+            grid-template-columns: 1fr;
+        }
+        &__textarea {
+            grid-column: unset;
+        }
+        &__trigger {
+            grid-column: unset;
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+        }
+    }
 }
