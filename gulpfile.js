@@ -13,11 +13,11 @@ function browsersync () {
         server: {
             baseDir:'src/'
         }
-    })
+    });
 }
 
 function cleanDist () {
-    return del('dist')
+    return del('dist');
 }
 
 function img () {
@@ -33,7 +33,10 @@ function img () {
                 ]
             })
         ]))
-        .pipe(dest('dist/img'))
+        .pipe(dest('dist/img')),
+
+        src ('src/icons/**/*')
+            .pipe(dest('dist/icons'));
 }
 
 function scripts () {
@@ -41,7 +44,7 @@ function scripts () {
     .pipe(concat('script.min.js'))
     .pipe(uglify())
     .pipe(dest('src/js'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 }
 
 function styles () {
@@ -68,7 +71,7 @@ function build() {
         'src/js/script.min.js',
         'src/*.html'
     ], {base: 'src'})
-    .pipe(dest('dist'))
+    .pipe(dest('dist'));
 }
 
 exports.styles = styles;
